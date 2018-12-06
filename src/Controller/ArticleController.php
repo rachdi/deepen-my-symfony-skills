@@ -25,9 +25,9 @@ class ArticleController extends AbstractController
     public function show($slug)
     {
         $comments = [
-            'I ate a normal rock once. It did NOT taste like bacon!',
-            'Woohoo! I\'m going on an all-asteroid diet!',
-            'I like bacon too! Buy some from my site! bakinsomebacon.com',
+            'I like',
+            'I heart',
+            'boom',
         ];
 
         return $this->render('article/show.html.twig', [
@@ -42,10 +42,8 @@ class ArticleController extends AbstractController
      */
     public function toggleArticleHeart($slug, LoggerInterface $logger)
     {
-        // TODO - actually heart/unheart the article!
-
         $logger->info('Article is being hearted!');
 
-        return new JsonResponse(['hearts' => rand(5, 100)]);
+        return new JsonResponse(['hearts' => rand(1, 100)]);
     }
 }
